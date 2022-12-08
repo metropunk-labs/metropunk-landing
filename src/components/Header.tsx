@@ -24,7 +24,7 @@ const NavLink = ({ children }: { children: ReactNode }) => (
     rounded={'md'}
     _hover={{
       textDecoration: 'none',
-      bg: useColorModeValue('dark', 'light'),
+      bg: useColorModeValue('light', 'dark'),
     }}
     href={'#'}>
     {children}
@@ -37,7 +37,7 @@ export default function Header() {
 
   return (
     <>
-      <Box bg={useColorModeValue('light', 'dark')} px={4} minW={'100%'} position={'fixed'} zIndex={20}>
+      <Box px={4} minW={'100%'} position={'fixed'} zIndex={20}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
             size={'md'}
@@ -60,7 +60,7 @@ export default function Header() {
             </HStack>
           </HStack>
           <Button onClick={toggleColorMode}>
-                {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
+            {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
           </Button>
         </Flex>
 

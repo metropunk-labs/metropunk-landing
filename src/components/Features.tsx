@@ -17,7 +17,7 @@ import { IoLogoGameControllerA } from 'react-icons/io';
 import { FaVoteYea } from 'react-icons/fa';
 
 // Replace test data with your own
-const features = [
+const creator_features = [
   {
     id: 1,
     icon: GiTakeMyMoney,
@@ -36,6 +36,9 @@ const features = [
     title: 'Reach a larger community of gamers who back projects',
     text: 'Our discovery algorithm maximises your reach and grows your audience with no extra work from you.',
   },
+]
+
+const backer_features = [
   {
     id: 4,
     icon: HiOutlineUserGroup,
@@ -68,7 +71,7 @@ export default function Features() {
 
       <Container mt={10} minW={['100%', '100%', '90%', '90%', '80%']} p={'10'}>
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
-          {features.map((feature) => (
+          {creator_features.map((feature) => (
             <HStack key={feature.id} align={'start'} gap={5}>
               <Square
                 bgColor={'purple'}
@@ -78,11 +81,29 @@ export default function Features() {
                 justifyContent={'center'}
                 verticalAlign={'center'}
               >
-              <Icon as={feature.icon} boxSize={'46px'}/>
+              <Icon as={feature.icon} boxSize={'46px'} color={'white'}/>
               </Square>
               <VStack align={'start'}>
-                <Text fontWeight={'bold'} align={'left'} fontSize={'3xl'}>{feature.title}</Text>
-                <Text align={'left'} fontSize={'2xl'}>{feature.text}</Text>
+                <Text fontWeight={'bold'} align={'left'} fontSize={'xl'}>{feature.title}</Text>
+                <Text align={'left'} fontFamily={'body'} fontWeight={'light'} fontSize={'xl'}>{feature.text}</Text>
+              </VStack>
+            </HStack>
+          ))}
+          {backer_features.map((feature) => (
+            <HStack key={feature.id} align={'start'} gap={5}>
+              <Square
+                bgColor={'purple'}
+                borderRadius={'md'}
+                size={'72px'}
+                alignContent={'center'}
+                justifyContent={'center'}
+                verticalAlign={'center'}
+              >
+              <Icon as={feature.icon} boxSize={'46px'} color={'white'}/>
+              </Square>
+              <VStack align={'start'}>
+                <Text fontWeight={'bold'} align={'left'} fontSize={'xl'}>{feature.title}</Text>
+                <Text align={'left'} fontFamily={'body'} fontWeight={'light'} fontSize={'xl'}>{feature.text}</Text>
               </VStack>
             </HStack>
           ))}

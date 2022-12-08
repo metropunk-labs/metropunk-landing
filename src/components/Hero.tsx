@@ -1,31 +1,42 @@
 import {
-  Flex,
   Container,
   Heading,
   Stack,
   Text,
   Button,
-  Icon,
-  IconProps,
+  useDisclosure,
+  useColorMode,
+  useColorModeValue,
+  Modal,
+  ModalContent,
+  ModalOverlay
 } from '@chakra-ui/react';
+import AlphaModal from './AlphaModal';
+
 
 export default function Hero() {
+  const { colorMode, toggleColorMode } = useColorMode();
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <Container maxW={'5xl'} padding={10}>
       <Stack
         textAlign={'center'}
         align={'center'}
         spacing={{ base: 10, md: 20 }}
-        py={{ base: 10, md: 28 }}>
+        py={{ base: 10, md: 28 }}
+        mt={10}
+        >
         <Heading
           fontWeight={600}
           fontSize={{ base: '3xl', sm: '5xl', md: '7xl' }}
           lineHeight={'110%'}
+          color={useColorModeValue('dark', 'light')}
           >
           Crowdfunding for video games {' '}
           <Text
             as={'span'}
-            bgGradient='linear(to-r, turquoise, sky, ocean, purple, pink)'
+            bgGradient={useColorModeValue('linear(to-r, sky, ocean, purple, pink)', 'linear(to-r, turquoise, sky, ocean, purple, pink)')}
             bgClip='text'
           >
             without risk
@@ -58,12 +69,19 @@ export default function Hero() {
             px={8}
             bg={'purple'}
             textColor={'white'}
-            _hover={{ bg: 'ocean',}}
+            _hover={{ bg: 'ocean' }}
+            onClick={onOpen}
           >
             sign up for alpha
           </Button>
         </Stack>
       </Stack>
+      <Modal isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay zIndex={0} />
+        <ModalContent mt={'20%'} bg={'transparent'}>
+          <AlphaModal/>
+        </ModalContent>
+      </Modal>
     </Container>
   );
 }
