@@ -1,25 +1,50 @@
 import React from 'react';
-import logo from './logo.svg';
+import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 import './App.css';
+import Fonts from './styles/fonts';
+
+import Main from './pages/Main';
+import Header from "./components/Header";
+
+const colors = {
+  light: "#E6E9EF",
+  dark: "#1D1D1D",
+  turquoise: "#27D7CF",
+  sky: "#3693E2",
+  ocean: "#4164F0",
+  purple: "#795AF1",
+  pink: "#FF8AE0"
+};
+
+const theme = extendTheme({
+  colors: {
+    light: colors.light,
+    dark: colors.dark,
+    turquoise: colors.turquoise,
+    sky: colors.sky,
+    ocean: colors.ocean,
+    purple: colors.purple,
+    pink: colors.pink
+  },
+  fonts: {
+    heading: "'Cera Pro Bold'",
+    body: "'Cera Pro Medium'"
+  },
+  styles: {
+    global: {
+    },
+  },
+})
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ChakraProvider theme={theme}>
+      <div className="App">
+        <Fonts/>
+        <Header/>
+        <Main/>
+      </div>
+    </ChakraProvider>
   );
 }
 
