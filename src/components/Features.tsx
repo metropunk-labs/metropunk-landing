@@ -6,42 +6,83 @@ import {
   Icon,
   Text,
   Stack,
+  Square,
   HStack,
   VStack,
 } from '@chakra-ui/react';
-import { CheckIcon } from '@chakra-ui/icons';
+import { GiTakeMyMoney } from 'react-icons/gi';
+import { HiOutlineChatAlt, HiOutlineUserGroup } from 'react-icons/hi';
+import { BsStars } from 'react-icons/bs';
+import { IoLogoGameControllerA } from 'react-icons/io';
+import { FaVoteYea } from 'react-icons/fa';
 
 // Replace test data with your own
-const features = Array.apply(null, Array(8)).map(function (x, i) {
-  return {
-    id: i,
-    title: 'Lorem ipsum dolor sit amet',
-    text: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam.',
-  };
-});
+const features = [
+  {
+    id: 1,
+    icon: GiTakeMyMoney,
+    title: 'Continuous fundraising',
+    text: 'Raise funds throughout the dev-cycle; as your project grows in reputation, grow funds as well!',
+  },
+  {
+    id: 2,
+    icon: HiOutlineChatAlt,
+    title: 'Direct communication to your market',
+    text: 'Poll and talk to your backers directly; keep them up to date with progress and see how they respond.',
+  },
+  {
+    id: 3,
+    icon: HiOutlineUserGroup,
+    title: 'Reach a larger community of gamers who back projects',
+    text: 'Our discovery algorithm maximises your reach and grows your audience with no extra work from you.',
+  },
+  {
+    id: 4,
+    icon: HiOutlineUserGroup,
+    title: 'Have a say!',
+    text: 'Vote on whether campaign milestones have been met! Get the maximum refund amount if they haven’t.',
+  },
+  {
+    id: 5,
+    icon: IoLogoGameControllerA,
+    title: 'Find your gaming community',
+    text: 'Connect with other backers who like the same games.',
+  },
+  {
+    id: 6,
+    icon: BsStars,
+    title: 'Direct channels',
+    text: 'Reach your favourite creators directly and find out what they’re creating every step of the way.',
+  },
+]
 
 export default function Features() {
   return (
-    <Box p={4}>
+    <Box p={4} w={'100%'}>
       <Stack spacing={4} as={Container} maxW={'3xl'} textAlign={'center'}>
-        <Heading fontSize={'3xl'}>This is the headline</Heading>
-        <Text color={'gray.600'} fontSize={'xl'}>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-          sed diam voluptua.
+        <Heading fontSize={'2xl'}>We believe in</Heading>
+        <Text fontSize={'3xl'}>
+          Mutually beneficial crowdfunding
         </Text>
       </Stack>
 
-      <Container mt={10}>
+      <Container mt={10} minW={['100%', '100%', '90%', '90%', '80%']} p={'10'}>
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
           {features.map((feature) => (
-            <HStack key={feature.id} align={'top'}>
-              <Box color={'green.400'} px={2}>
-                <Icon as={CheckIcon} />
-              </Box>
+            <HStack key={feature.id} align={'start'} gap={5}>
+              <Square
+                bgColor={'purple'}
+                borderRadius={'md'}
+                size={'72px'}
+                alignContent={'center'}
+                justifyContent={'center'}
+                verticalAlign={'center'}
+              >
+              <Icon as={feature.icon} boxSize={'46px'}/>
+              </Square>
               <VStack align={'start'}>
-                <Text fontWeight={600}>{feature.title}</Text>
-                <Text color={'gray.600'} align={'left'}>{feature.text}</Text>
+                <Text fontWeight={'bold'} align={'left'} fontSize={'3xl'}>{feature.title}</Text>
+                <Text align={'left'} fontSize={'2xl'}>{feature.text}</Text>
               </VStack>
             </HStack>
           ))}

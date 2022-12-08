@@ -35,7 +35,12 @@ export default function Hero() {
           Existing crowdfunding solutions do not enforce proper backer protections and hold creators accountable to their initial promises.
         </Text>
         <Text fontSize={['2xl', 'xl', '3xl']} maxW={'3xl'}>
-          Metropunk implements a simple solution to address these problems — consensus based escrows.
+          Metropunk implements a simple solution to address these problems — {' '}
+          <Text
+            as={'span'}
+            fontWeight={'bold'}
+          >consensus based escrows.
+          </Text>
         </Text>
         <Stack spacing={6} direction={'row'}>
           <Button

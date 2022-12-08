@@ -11,11 +11,11 @@ export default function Main() {
   const { colorMode } = useColorMode();
   
   return (
-    <Box bg={useColorModeValue('light', 'dark')}>
+    // <Box bg={useColorModeValue('light', 'dark')}>
       <div className={`${ (colorMode === 'light') ? 'container-light' : 'container-dark'}`}>
         <Hero/>
         <Features/>
       </div>
-    </Box>
+    // </Box>
   );
 }
