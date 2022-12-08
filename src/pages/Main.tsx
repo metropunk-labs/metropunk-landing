@@ -13,7 +13,6 @@ export default function Main() {
   return (
     <Box bg={useColorModeValue('light', 'dark')}>
       <div className={`${ (colorMode === 'light') ? 'container-light' : 'container-dark'}`}>
-
         <Hero/>
         <Features/>
       </div>

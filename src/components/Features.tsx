@@ -32,8 +32,8 @@ export default function Features() {
         </Text>
       </Stack>
 
-      <Container maxW={'6xl'} mt={10}>
-        <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing={10}>
+      <Container mt={10}>
+        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
           {features.map((feature) => (
             <HStack key={feature.id} align={'top'}>
               <Box color={'green.400'} px={2}>
@@ -41,7 +41,7 @@ export default function Features() {
               </Box>
               <VStack align={'start'}>
                 <Text fontWeight={600}>{feature.title}</Text>
-                <Text color={'gray.600'}>{feature.text}</Text>
+                <Text color={'gray.600'} align={'left'}>{feature.text}</Text>
               </VStack>
             </HStack>
           ))}

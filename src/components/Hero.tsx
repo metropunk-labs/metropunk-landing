@@ -40,16 +40,16 @@ export default function Hero() {
         <Stack spacing={6} direction={'row'}>
           <Button
             rounded={'full'}
-            fontSize={['2xl', 'xl', '2xl']}
-            py={10}
+            fontSize={['2xl', 'xl', 'xl']}
+            py={8}
             px={8}
             >
             read about it
           </Button>
           <Button
             rounded={'full'}
-            fontSize={['2xl', 'xl', '2xl']}
-            py={10}
+            fontSize={['2xl', 'xl', 'xl']}
+            py={8}
             px={8}
             bg={'purple'}
             textColor={'white'}

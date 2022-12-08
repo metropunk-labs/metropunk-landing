@@ -37,7 +37,7 @@ export default function Header() {
 
   return (
     <>
-      <Box bg={useColorModeValue('light', 'dark')} px={4}>
+      <Box bg={useColorModeValue('light', 'dark')} px={4} minW={'100%'} position={'fixed'} zIndex={20}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
             size={'md'}
@@ -48,7 +48,7 @@ export default function Header() {
           />
           <HStack spacing={8} alignItems={'center'}>
             <Box>
-              <Image src={'./assets/metropunk-logo.png'} maxWidth={'150px'}/>
+              <Image src={'./assets/metropunk-logo.png'} maxWidth={'180px'}/>
             </Box>
             <HStack
               as={'nav'}
