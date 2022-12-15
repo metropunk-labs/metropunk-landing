@@ -34,8 +34,8 @@ const theme = extendTheme({
   styles: {
     global: {
       body: {
-        bg: mode(colors.light, colors.dark),
-        color: mode(colors.dark, colors.light)
+        bg: mode('#E6E9EF', '#1D1D1D'),
+        color: mode(colors.dark, colors.light),
       }
     },
   },

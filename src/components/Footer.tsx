@@ -10,6 +10,11 @@ import {
 import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 import { ReactNode } from 'react';
 
+const SocialLinks = {
+  twitter: "https://twitter.com/metropunklabs",
+  instagram: "https://www.instagram.com/metropunklabs/"
+}
+
 const SocialButton = ({
   children,
   label,
@@ -56,13 +61,10 @@ export default function Footer() {
         align={{ base: 'center', md: 'center' }}>
         <Text>© 2022 Metropunk Labs. All rights reserved</Text>
         <Stack direction={'row'} spacing={6}>
-          <SocialButton label={'Twitter'} href={'#'}>
+          <SocialButton label={'Twitter'} href={SocialLinks.twitter}>
             <FaTwitter />
           </SocialButton>
-          <SocialButton label={'YouTube'} href={'#'}>
-            <FaYoutube />
-          </SocialButton>
-          <SocialButton label={'Instagram'} href={'#'}>
+          <SocialButton label={'Instagram'} href={SocialLinks.instagram}>
             <FaInstagram />
           </SocialButton>
         </Stack>

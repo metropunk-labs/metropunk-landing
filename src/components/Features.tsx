@@ -41,7 +41,7 @@ const creator_features = [
 const backer_features = [
   {
     id: 4,
-    icon: HiOutlineUserGroup,
+    icon: FaVoteYea,
     title: 'Have a say!',
     text: 'Vote on whether campaign milestones have been met! Get the maximum refund amount if they haven’t.',
   },

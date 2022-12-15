@@ -36,7 +36,7 @@ export default function Hero() {
           Crowdfunding for video games {' '}
           <Text
             as={'span'}
-            bgGradient={useColorModeValue('linear(to-r, sky, ocean, purple, pink)', 'linear(to-r, turquoise, sky, ocean, purple, pink)')}
+            bgGradient={useColorModeValue('linear(to-r, sky, ocean, purple)', 'linear(to-r, turquoise, sky, ocean, purple, pink)')}
             bgClip='text'
           >
             without risk
