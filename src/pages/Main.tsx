@@ -16,7 +16,7 @@ export default function Main() {
   const { colorMode } = useColorMode();
   
   return (
-    <Box bg={useColorModeValue('light', 'dark')}>
+    <Box bg={useColorModeValue('light', 'dark')} w={"100%"}>
       <div className={`${ (colorMode === 'light') ? 'container-light' : 'container-dark'}`}>
         <Hero/>
         <Features/>

@@ -8,7 +8,7 @@ import Main from './pages/Main';
 import Header from "./components/Header";
 
 const colors = {
-  light: "#E6E9EF",
+  light: "#FFFFFF",
   dark: "#1D1D1D",
   turquoise: "#27D7CF",
   sky: "#3693E2",

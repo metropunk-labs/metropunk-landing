@@ -37,7 +37,7 @@ export default function Header() {
 
   return (
     <>
-      <Box px={4} minW={'100%'} position={'fixed'} zIndex={20}>
+      <Box px={4} minW={'100%'} position={'fixed'} zIndex={20} bg={useColorModeValue('light', 'dark')}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
             size={'md'}

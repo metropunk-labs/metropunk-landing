@@ -53,18 +53,18 @@ export default function Hero() {
           >consensus based escrows.
           </Text>
         </Text>
-        <Stack spacing={6} direction={'row'}>
-          <Button
+        <Stack spacing={6} direction={['column', 'column','row']}>
+          {/* <Button
             rounded={'full'}
             fontSize={['2xl', 'xl', 'xl']}
             py={8}
             px={8}
             >
             read about it
-          </Button>
+          </Button> */}
           <Button
             rounded={'full'}
-            fontSize={['2xl', 'xl', 'xl']}
+            fontSize={['xl', 'xl', 'xl']}
             py={8}
             px={8}
             bg={'purple'}
